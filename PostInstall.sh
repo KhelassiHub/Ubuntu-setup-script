@@ -4,7 +4,7 @@ sudo apt update
 sudo apt upgrade
 
 # Prerequisites -----------------
-sudo apt install build-essential cmake g++ git libboost-all-dev curl -y
+sudo apt install build-essential make cmake g++ git libboost-all-dev curl -y
 
 # Enable partner repositories if disabled -----------------
 sudo sed -i.bak "/^# deb .*partner/ s/^# //" /etc/apt/sources.list
@@ -37,5 +37,8 @@ wget -P /tmp https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh
 # Starting installation process
 bash /tmp/Anaconda3-2020.02-Linux-x86_64.sh
 
+# Cleaning stuff
+sudo apt-get autoremove
+sudo apt-get autoclean
 
 echo "Script finished"
