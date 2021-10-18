@@ -4,7 +4,7 @@ sudo apt update
 sudo apt upgrade
 
 # Prerequisites
-sudo apt install build-essential cmake libboost-all-dev curl -y
+sudo apt install build-essential cmake g++ git libboost-all-dev curl -y
 
 # Enable partner repositories if disabled
 sudo sed -i.bak "/^# deb .*partner/ s/^# //" /etc/apt/sources.list
@@ -25,6 +25,15 @@ sudo apt install code -y
 
 # Browsers
 sudo apt-get install firefox -y
+
+# Anaconda
+
+#Prerequisites
+sudo apt install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6
+# Downloading anaconda
+wget -P /tmp https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh
+# Starting installation process
+bash /tmp/Anaconda3-2020.02-Linux-x86_64.sh
 
 
 echo "Script finished"
