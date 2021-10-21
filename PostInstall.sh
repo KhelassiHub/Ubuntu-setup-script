@@ -4,7 +4,7 @@ sudo apt update
 sudo apt upgrade
 
 # Prerequisites --------------------------------------------------------------------
-sudo apt install build-essential make cmake g++ git libboost-all-dev curl -y
+sudo apt install build-essential make cmake g++ git libboost-all-dev curl preload -y
 
 # Enable partner repositories if disabled ------------------------------------------
 sudo sed -i.bak "/^# deb .*partner/ s/^# //" /etc/apt/sources.list
