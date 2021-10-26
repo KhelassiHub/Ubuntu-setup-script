@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git config --global user.name "Mohamed Amine Khelassi"
+git config --global user.name "KhelassiHub"
 git config --global user.email aminou98@gmail.com
 
 git config --global color.diff auto
