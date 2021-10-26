@@ -44,12 +44,17 @@ sudo apt-get install firefox -y
 
 # Anaconda  ----------------------------------------------------------------------------
 
+if [ -d "/home/$USER/anaconda3" ] 
+then
+    echo "Anaconda is already installed." 
+else
 #Prerequisites
-sudo apt install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6
+    sudo apt install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6
 # Downloading anaconda
-wget -P /tmp https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh
+    wget -P /tmp https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh
 # Starting installation process
-bash /tmp/Anaconda3-2020.02-Linux-x86_64.sh
+    bash /tmp/Anaconda3-2020.02-Linux-x86_64.sh
+fi
 
 # Cleaning stuff
 sudo apt-get autoremove
