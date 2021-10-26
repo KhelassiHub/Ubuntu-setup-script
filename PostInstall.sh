@@ -4,7 +4,13 @@ sudo apt update
 sudo apt upgrade
 
 # Prerequisites --------------------------------------------------------------------
-sudo apt install build-essential make cmake g++ git libboost-all-dev curl preload -y
+pkgs='build-essential make cmake g++ git libboost-all-dev curl preload'
+for pkg in $pkgs; do
+    status="$(dpkg-query -W --showformat='${db:Status-Status}' "$pkg" 2>&1)"
+    if [ ! $? = 0 ] || [ ! "$status" = installed ]; then
+        sudo apt install $pkg -y
+    fi
+done
 
 # Enable partner repositories if disabled ------------------------------------------
 sudo sed -i.bak "/^# deb .*partner/ s/^# //" /etc/apt/sources.list
@@ -15,14 +21,27 @@ sudo apt install git-lfs
 
 
 # Code editor (VS code) ----------------------------------
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
-sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
-rm -f packages.microsoft.gpg
+pkg=code
+status="$(dpkg-query -W --showformat='${db:Status-Status}' "$pkg" 2>&1)"
+if [ ! $? = 0 ] || [ ! "$status" = installed ]; then
+    wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+    sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+    sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+    rm -f packages.microsoft.gpg
 
-sudo apt install apt-transport-https -y
-sudo apt update
-sudo apt install code -y
+    sudo apt install apt-transport-https -y
+    sudo apt update
+    sudo apt install code -y
+fi
+
+# wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+# sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+# sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+# rm -f packages.microsoft.gpg
+
+# sudo apt install apt-transport-https -y
+# sudo apt update
+# sudo apt install code -y
 
 # General Software --------------------------------------------------------------------
 
