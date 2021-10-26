@@ -10,6 +10,10 @@ sudo apt install build-essential make cmake g++ git libboost-all-dev curl preloa
 sudo sed -i.bak "/^# deb .*partner/ s/^# //" /etc/apt/sources.list
 sudo apt-get update
 
+# Git lfs
+sudo apt install git-lfs
+
+
 # Code editor (VS code) ----------------------------------
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
 sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
