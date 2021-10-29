@@ -75,6 +75,9 @@ else
     bash /tmp/Anaconda3-2020.02-Linux-x86_64.sh
 fi
 
+# Docker
+sudo apt install docker.io
+
 # Cleaning stuff
 sudo apt-get autoremove
 sudo apt-get autoclean
