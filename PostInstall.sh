@@ -78,8 +78,13 @@ fi
 # Docker
 sudo apt install docker.io
 
+# Screen (terminal multiplexer)
+sudo apt install screen
+
 # Cleaning stuff
 sudo apt-get autoremove
 sudo apt-get autoclean
+
+
 
 echo "Script finished"
