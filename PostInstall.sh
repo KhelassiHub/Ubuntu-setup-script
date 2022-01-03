@@ -81,6 +81,9 @@ sudo apt install docker.io
 # Screen (terminal multiplexer)
 sudo apt install screen
 
+# Yubikey
+sudo apt-get install libpam-u2f
+
 # Cleaning stuff
 sudo apt-get autoremove
 sudo apt-get autoclean
