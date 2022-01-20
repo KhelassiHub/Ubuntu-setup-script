@@ -8,4 +8,4 @@ conda update conda
 conda update anaconda
 
 # Packages
-conda install beautifulsoup4 notebook numpy matplotlib seaborn pandas scikit-learn
+conda install beautifulsoup4 notebook numpy matplotlib seaborn pandas scikit-learn tqdm
