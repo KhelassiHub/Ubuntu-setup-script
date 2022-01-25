@@ -87,6 +87,13 @@ sudo apt-get install libpam-u2f
 #Dynamic wallpaper
 sudo apt-get install variety
 
+#Pop shell (tiling) if your not running on PopOs
+    #requires sudo apt install node-typescript
+
+git clone https://github.com/pop-os/shell
+cd shell
+make local-install
+
 # Cleaning stuff
 sudo apt-get autoremove
 sudo apt-get autoclean
