@@ -48,11 +48,13 @@ fi
 # Gnome tweak tool
 sudo add-apt-repository universe
 sudo apt install gnome-tweak-tool
-# Spotify
-sudo sh -c 'echo "deb http://repository.spotify.com stable non-free" >> /etc/apt/sources.list.d/spotify.list'
-curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
-sudo apt update
-sudo apt install spotify-client
+
+# # Spotify
+# sudo sh -c 'echo "deb http://repository.spotify.com stable non-free" >> /etc/apt/sources.list.d/spotify.list'
+# curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
+# sudo apt update
+# sudo apt install spotify-client
+
 # VLC
 sudo apt install VLC
 
