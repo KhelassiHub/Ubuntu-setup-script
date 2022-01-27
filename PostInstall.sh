@@ -80,6 +80,11 @@ fi
 # Docker
 sudo apt install docker.io
 
+#Zotero
+wget -qO- https://apt.retorque.re/file/zotero-apt/install.sh | sudo bash
+sudo apt update
+sudo apt install zotero
+
 # Screen (terminal multiplexer)
 sudo apt install screen
 
