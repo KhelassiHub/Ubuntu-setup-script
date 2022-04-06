@@ -94,6 +94,9 @@ sudo apt-get install libpam-u2f
 #Dynamic wallpaper
 sudo apt-get install variety
 
+#Neofetch (for software and hardware infos)
+sudo apt install neofetch
+
 #Pop shell (tiling) if your not running on PopOs
     #requires sudo apt install node-typescript
 
